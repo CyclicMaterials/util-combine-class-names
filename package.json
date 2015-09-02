@@ -1,0 +1,32 @@
+{
+  "name": "util-combine-class-names",
+  "version": "0.0.1",
+  "author": "Frederik Krautwald",
+  "description": "Utility to combine class names",
+  "license": "MIT",
+  "bugs": "https://github.com/CyclicMaterials/util-combine-class-names/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CyclicMaterials/util-combine-class-names"
+  },
+  "keywords": [
+    "cyclejs",
+    "class names",
+    "utility"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+    "babel": "^5.8.21",
+    "eslint": "1.0.x",
+    "eslint-config-cycle": "^3.0.0",
+    "eslint-plugin-cycle": "^1.0.1",
+    "eslint-plugin-no-class": "^0.1.0",
+    "faucet": "0.0.1",
+    "tape": "^4.2.0"
+  },
+  "scripts": {
+    "lint": "eslint *.js",
+    "test": "npm run lint && babel-node *.test.js | faucet"
+  }
+}

@@ -15,6 +15,11 @@
     "utility"
   ],
   "main": "util-combine-class-names.js",
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
   "dependencies": {
   },
   "devDependencies": {

@@ -20,19 +20,24 @@
       "babelify"
     ]
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel": "^5.8.21",
-    "eslint": "1.0.x",
+    "cli-release": "^1.0.3",
+    "eslint": "1.0.0",
     "eslint-config-cycle": "^3.0.0",
     "eslint-plugin-cycle": "^1.0.1",
     "eslint-plugin-no-class": "^0.1.0",
     "faucet": "0.0.1",
-    "tape": "^4.2.0"
+    "tape": "^4.2.0",
+    "validate-commit-message": "^3.0.1"
   },
   "scripts": {
     "lint": "eslint *.js",
-    "test": "npm run lint && babel-node *.test.js | faucet"
+    "test": "npm run lint && babel-node *.test.js | faucet",
+    "start": "npm install && validate-commit-msg",
+    "patch": "release patch",
+    "minor": "release minor",
+    "major": "release major"
   }
 }

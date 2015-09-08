@@ -1,5 +1,5 @@
 {
-  "name": "util-combine-class-names",
+  "name": "@cyclic/util-combine-class-names",
   "version": "0.0.1",
   "author": "Frederik Krautwald",
   "description": "Utility to combine class names",

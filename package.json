@@ -1,6 +1,6 @@
 {
   "name": "@cyclic/util-combine-class-names",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": "Frederik Krautwald",
   "description": "Utility to combine class names",
   "license": "MIT",

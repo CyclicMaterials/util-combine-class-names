@@ -5,9 +5,9 @@ function combineClassNames(...classNames) {
     }
 
     return Array.isArray(value) ?
-      value.length === 0 || combineClassNames.apply(void 0, value) :
-      value.trim();
-  }).join(` `);
+      combineClassNames.apply(void 0, value) :
+      value;
+  }).join(` `).replace(/ +/g, ` `).trim();
 }
 
 export default combineClassNames;

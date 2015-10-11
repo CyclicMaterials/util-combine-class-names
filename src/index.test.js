@@ -1,5 +1,5 @@
 import test from 'tape';
-import combineClassNames from './util-combine-class-names.js';
+import combineClassNames from './index';
 
 test(`No argument returns empty string`, (assert) => {
   const expected = ``;

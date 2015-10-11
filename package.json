@@ -10,34 +10,49 @@
     "url": "https://github.com/CyclicMaterials/util-combine-class-names"
   },
   "keywords": [
-    "cyclejs",
     "class names",
     "utility"
   ],
-  "main": "util-combine-class-names.js",
+  "directories": {
+    "doc": "./doc",
+    "lib": "./lib"
+  },
+  "files": [
+    "lib/",
+    "src/"
+  ],
+  "main": "./lib/index.js",
   "browserify": {
     "transform": [
       "babelify"
     ]
   },
-  "dependencies": {},
   "devDependencies": {
-    "babel": "^5.8.21",
-    "cli-release": "^1.0.3",
+    "babel": "5.8.21",
+    "babelify": "6.3.0",
+    "cli-release": "1.0.3",
     "eslint": "1.0.0",
-    "eslint-config-cycle": "^3.0.0",
-    "eslint-plugin-cycle": "^1.0.1",
-    "eslint-plugin-no-class": "^0.1.0",
+    "eslint-config-cycle": "3.0.0",
+    "eslint-plugin-cycle": "1.0.1",
+    "eslint-plugin-no-class": "0.1.0",
     "faucet": "0.0.1",
-    "tape": "^4.2.0",
-    "validate-commit-message": "^3.0.1"
+    "markdox": "0.1.10",
+    "tape": "4.2.1",
+    "validate-commit-message": "3.0.1"
   },
   "scripts": {
-    "lint": "eslint *.js",
-    "test": "npm run lint && babel-node *.test.js | faucet",
-    "start": "npm install && validate-commit-msg",
-    "patch": "release patch",
-    "minor": "release minor",
-    "major": "release major"
+    "lint": "eslint ./src/*.js",
+    "test": "npm run lint && babel-node ./src/*.test.js | faucet",
+    "deps": "npm install && validate-commit-msg",
+    "start": "npm run deps",
+    "predoc": "rm -rf doc/ && mkdir -p doc",
+    "doc": "node ./scripts/make-api-doc.js",
+    "postcompile": "find lib/ -type f -name '*.test.js' -exec rm {} +",
+    "precompile": "rm -rf lib/ && mkdir -p lib",
+    "compile": "babel -d lib/ src/",
+    "prepublish": "npm run compile",
+    "patch": "git checkout master && release patch && npm publish --access=public",
+    "minor": "git checkout master && release minor && npm publish --access=public",
+    "major": "git checkout master && release major && npm publish --access=public"
   }
 }
